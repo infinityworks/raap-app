@@ -44,7 +44,7 @@ const subscription = gql`
   }
 `;
 
-class Index extends React.Component {
+export class Index extends React.Component {
   static getInitialProps() {
     // console.log('initial', this.props)
   }
