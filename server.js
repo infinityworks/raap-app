@@ -29,5 +29,5 @@ if (!process.env.LAMBDA) {
     });
 }
 
-export const app;
-export const server;
+exports.app = app;
+exports.server = server;
