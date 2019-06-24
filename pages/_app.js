@@ -1,8 +1,5 @@
 import App, { Container } from "next/app";
 import React, { Fragment } from "react";
-// import { ApolloProvider } from "react-apollo";
-
-// import withApolloClient from "../lib/with-apollo-client";
 import { ThemeProvider } from "styled-components";
 import ResetStyle from "../components/ResetStyle";
 
@@ -12,7 +9,7 @@ const theme = {
   }
 };
 
-class MyApp extends App {
+export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -37,6 +34,4 @@ class MyApp extends App {
       </Container>
     );
   }
-}
-
-export default (MyApp);
+};

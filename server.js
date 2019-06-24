@@ -1,7 +1,7 @@
-const express = require("express");
-const next = require("next");
+const express = require('express');
+const next = require('next');
 
-const dev = process.env.NODE_ENV !== "production";
+const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
@@ -10,19 +10,20 @@ app
   .then(() => {
     const server = express();
 
-    server.get("/p/:name/:title", (req, res) => {
-      const actualPage = "/post";
-      const queryParams = { name: req.params.name, title: req.params.title };
+    server.get('/p/:title', (req, res) => {
+      const actualPage = '/post';
+      const queryParams = { title: req.params.title };
       app.render(req, res, actualPage, queryParams);
     });
 
-    server.get("*", (req, res) => {
+    server.get('*', (req, res) => {
+      // console.log(req)
       return handle(req, res);
     });
 
     server.listen(3000, err => {
       if (err) throw err;
-      console.log("> Ready on http://localhost:3000");
+      console.log('> Ready on http://localhost:3000');
     });
   })
   .catch(ex => {

@@ -44,10 +44,15 @@ const subscription = gql`
   }
 `;
 
-class App extends React.Component {
+class Index extends React.Component {
+  static getInitialProps () {
+    // console.log('initial', this.props)
+  }
+
   state = { todo: "" };
   componentDidMount() {
     this.props.subscribeToNewTodos();
+    // console.log('mounted',this.props)
   }
   createTodo = () => {
     const todo = {
@@ -73,14 +78,14 @@ class App extends React.Component {
         <ul>
         <PostLink title="Hello Next.js" name="hello" />
         <PostLink title="Learn Next.js is awesome" name="learn" />
-        <PostLink title="Deploy apps with Zeit" name="deploy" />
+        <PostLink title="Deploy Indexs with Zeit" name="deploy" />
       </ul>
       </div>
     );
   }
 }
 
-const AppWithTodos = compose(
+const IndexWithTodos = compose(
   graphql(mutation, {
     props: props => ({
       createTodo: todo => {
@@ -134,6 +139,6 @@ const AppWithTodos = compose(
       }
     })
   })
-)(App);
+)(Index);
 
-export default withData(AppWithTodos);
+export default withData(IndexWithTodos);

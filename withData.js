@@ -6,6 +6,6 @@ export default withAppSyncData({
   region: config.region,
   auth: {
     type: config.authenticationType,
-    key: config.apiKey
+    apiKey: config.apiKey
   }
 });
