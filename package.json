@@ -7,7 +7,9 @@
     "test": "npx jest --config test/jest.config.js",
     "clean": "rimraf .next",
     "build": "npm run clean && next build",
-    "start": "cross-env NODE_ENV=development nodemon --watch src server/index.js server/index.js"
+    "postinstall": "npm run build",
+    "dev": "cross-env NODE_ENV=development nodemon --watch src server/index.js server/index.js",
+    "start": "NODE_ENV=production node server/index.js"
   },
   "keywords": [],
   "author": "",
