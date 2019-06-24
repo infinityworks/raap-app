@@ -16,16 +16,17 @@
     "aws-appsync": "^1.0.22",
     "aws-appsync-react": "^1.0.13",
     "graphql-tag": "^2.9.2",
-    "next": "latest",
+    "next": "^8.1.0",
     "next-apollo": "^1.0.13",
     "next-apollo-appsync": "^0.0.7",
-    "react": "^16.7.0",
+    "react": "^16.8.6",
     "react-apollo": "^2.1.4",
-    "react-dom": "^16.4.0",    
+    "react-dom": "^16.8.6",
     "styled-components": "^4.0.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
+    "aws-serverless-express": "^3.3.6",
     "babel-plugin-styled-components": "^1.8.0",
     "cross-env": "^5.2.0",
     "express": "^4.17.1"
