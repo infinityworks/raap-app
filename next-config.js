@@ -1,4 +1,5 @@
 module.exports = {
+  useFileSystemPublicRoutes: false,
   webpack: (config) => {
     // Fixes npm packages that depend on `fs` module
     config.node = {
