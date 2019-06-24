@@ -9,7 +9,7 @@ const handler = routes.getRequestHandler(app);
 
 const createServer = () => {
   const server = express();
-  return server;
+  return server.use(handler);
 };
 
 const server = createServer();
@@ -18,7 +18,7 @@ if (!process.env.LAMBDA) {
   app
     .prepare()
     .then(() => {
-      server.use(handler).listen(port, err => {
+      server.listen(port, err => {
         if (err) throw err;
         console.log(`Ready on http://localhost:${port}`);
       });
