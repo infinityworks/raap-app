@@ -4,11 +4,11 @@ const next = require("next");
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
-const handle = app.getRequestHandler();
+const routes = require("./routes");
+const handler = routes.getRequestHandler(app);
 
 const createServer = () => {
   const server = express();
-  server.get("*", (req, res) => handle(req, res));
   return server;
 };
 
@@ -18,7 +18,7 @@ if (!process.env.LAMBDA) {
   app
     .prepare()
     .then(() => {
-      server.listen(port, err => {
+      server.use(handler).listen(port, err => {
         if (err) throw err;
         console.log(`Ready on http://localhost:${port}`);
       });

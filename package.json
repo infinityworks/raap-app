@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node server.js",
-    "build": "next build",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "clean": "rimraf .next",
+    "build": "npm run clean && next build",
+    "start": "cross-env NODE_ENV=development nodemon --watch src server/index.js server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +29,8 @@
     "aws-serverless-express": "^3.3.6",
     "babel-plugin-styled-components": "^1.8.0",
     "cross-env": "^5.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "next-routes": "^1.4.2",
+    "nodemon": "^1.19.1"
   }
 }

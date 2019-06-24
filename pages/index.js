@@ -2,12 +2,12 @@ import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 import withData from "../withData";
 import uuidV4 from "uuid/v4";
-import Link from 'next/link';
+import Link from "next/link";
 
 const PostLink = props => (
   <li>
-    <Link as={`/p/${props.title}`} href={`/post?title=${props.title}`}>
-      <a>{props.title}</a>
+    <Link as={`/post/${props.title}`} href={`/post?title=${props.title}`}>
+      <a>{props.title} TEST</a>
     </Link>
   </li>
 );
@@ -45,7 +45,7 @@ const subscription = gql`
 `;
 
 class Index extends React.Component {
-  static getInitialProps () {
+  static getInitialProps() {
     // console.log('initial', this.props)
   }
 
@@ -76,10 +76,10 @@ class Index extends React.Component {
           <p key={index}>{todo.name}</p>
         ))}
         <ul>
-        <PostLink title="Hello Next.js" name="hello" />
-        <PostLink title="Learn Next.js is awesome" name="learn" />
-        <PostLink title="Deploy Indexs with Zeit" name="deploy" />
-      </ul>
+          <PostLink title="Hello Next.js" name="hello" />
+          <PostLink title="Learn Next.js is awesome" name="learn" />
+          <PostLink title="Deploy Indexs with Zeit" name="deploy" />
+        </ul>
       </div>
     );
   }
