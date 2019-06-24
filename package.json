@@ -9,7 +9,9 @@
     "build": "npm run clean && next build",
     "postinstall": "npm run build",
     "dev": "cross-env NODE_ENV=development nodemon --watch src server/index.js server/index.js",
-    "start": "NODE_ENV=production node server/index.js"
+    "start": "NODE_ENV=production node server/index.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
@@ -29,8 +31,13 @@
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
-    "babel-jest": "24.1.0",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
     "aws-serverless-express": "^3.3.6",
+    "babel-jest": "24.1.0",
+    "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.8.0",
     "cross-env": "^5.2.0",
     "enzyme": "^3.10.0",
