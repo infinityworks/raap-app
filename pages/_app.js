@@ -1,12 +1,12 @@
-import App, { Container } from "next/app";
-import React, { Fragment } from "react";
-import { ThemeProvider } from "styled-components";
-import ResetStyle from "../components/ResetStyle";
+import App, { Container } from 'next/app';
+import React, { Fragment } from 'react';
+import { ThemeProvider } from 'styled-components';
+import ResetStyle from '../components/ResetStyle';
 
 const theme = {
   colors: {
-    primary: "#0070f3"
-  }
+    primary: '#0070f3',
+  },
 };
 
 export default class MyApp extends App {
@@ -34,4 +34,4 @@ export default class MyApp extends App {
       </Container>
     );
   }
-};
+}
