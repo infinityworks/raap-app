@@ -5,10 +5,7 @@ import Link from 'next/link';
 const PostLink = ({ title }) => (
   <li>
     <Link as={`/post/${title}`} href={`/post?title=${title}`}>
-      <a href>
         {title}
-        {'TEST'}
-      </a>
     </Link>
   </li>
 );
@@ -46,7 +43,7 @@ class Index extends React.Component {
         />
         <button onClick={this.createTodo}>Create Todo</button>
         {this.props.todos.map((todo, index) => (
-          <p key={index}>{todo.name}</p>
+          <p className="t_todo" key={index}>{todo.name}</p>
         ))}
         <ul>
           <PostLink title="Hello Next.js" name="hello" />

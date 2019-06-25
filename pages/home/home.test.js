@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 import Index from './_component';
 
 const defaultProps = {
@@ -10,10 +10,16 @@ const defaultProps = {
   todos: [],
 };
 
-describe('With Snapshot Testing', () => {
-  it('Index shows index page"', () => {
+
+describe('Home page', () => {
+  it('matches the snapshot"', () => {
     const component = renderer.create(<Index {...defaultProps} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('should render the correct number of todos', () => {
+    const r = renderer.create(<Index {...defaultProps} />);
+    expect(r.root.findAllByType('p').length).toEqual(1);
   });
 });
