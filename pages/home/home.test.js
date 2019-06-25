@@ -1,18 +1,18 @@
 /* eslint-env jest */
 
-import React from "react";
-import renderer from "react-test-renderer";
-import { Index } from "../pages/index.js";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Index from './_component';
 
 const defaultProps = {
   createTodo: () => {},
   subscribeToNewTodos: () => {},
   todos: [],
-}
+};
 
-describe("With Snapshot Testing", () => {
+describe('With Snapshot Testing', () => {
   it('Index shows index page"', () => {
-    const component = renderer.create(<Index {...defaultProps}  />);
+    const component = renderer.create(<Index {...defaultProps} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
