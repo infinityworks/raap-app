@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page matches the snapshot" 1`] = `
+<div>
+  <p>
+    Hello World
+  </p>
+  <input
+    onChange={[Function]}
+    value=""
+  />
+  <button
+    onClick={[Function]}
+  >
+    Create Todo
+  </button>
+  <ul>
+    <li>
+      <a
+        href="/post/Hello Next.js"
+        onClick={[Function]}
+      >
+        Hello Next.js
+      </a>
+    </li>
+    <li>
+      <a
+        href="/post/Learn Next.js is awesome"
+        onClick={[Function]}
+      >
+        Learn Next.js is awesome
+      </a>
+    </li>
+    <li>
+      <a
+        href="/post/Deploy Indexs with Zeit"
+        onClick={[Function]}
+      >
+        Deploy Indexs with Zeit
+      </a>
+    </li>
+  </ul>
+</div>
+`;

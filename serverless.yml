@@ -1,0 +1,43 @@
+service: web-poc
+
+custom:
+  dev:
+    GOOGLE_TAG_MANAGER_ID: ''
+  uat:
+    GOOGLE_TAG_MANAGER_ID: ''
+  prod:
+    GOOGLE_TAG_MANAGER_ID: ''
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: eu-west-2
+  versionFunctions: false
+  environment:
+    NODE_PORT: 80
+    STORYBOOK: true
+    LAMBDA: true
+    LOG_LEVEL: info
+    STAGE: ${opt:stage, self:provider.stage}
+    GOOGLE_TAG_MANAGER_ID: ${self:custom.${opt:stage, self:provider.stage}.GOOGLE_TAG_MANAGER_ID}
+
+functions:
+  app:
+    handler: lambda.handler
+    timeout: 30
+    reservedConcurrency: 100
+    events:
+      - http: 'ANY /'
+      - http: 'ANY {proxy+}'
+
+resources:
+  Resources:
+    GatewayResponse:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseType: DEFAULT_5XX
+        ResponseTemplates:
+          text/html: ${file(./error-page.js):html}
+        RestApiId: 
+          Ref: 'ApiGatewayRestApi'

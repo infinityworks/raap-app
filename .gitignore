@@ -1,4 +1,5 @@
 node_modules
 
-# appsync
-AppSync.js
+aws-exports.js
+
+.next

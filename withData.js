@@ -1,4 +1,11 @@
-import { withAppSyncData } from 'next-apollo-appsync'
-import AppSyncConfig from './AppSync'
+import { withAppSyncData } from 'next-apollo-appsync';
+import config from './aws-exports';
 
-export default withAppSyncData(AppSyncConfig)
+export default withAppSyncData({
+  url: config.graphqlEndpoint,
+  region: config.region,
+  auth: {
+    type: config.authenticationType,
+    apiKey: config.apiKey,
+  },
+});
