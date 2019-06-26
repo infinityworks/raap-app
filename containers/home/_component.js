@@ -1,14 +1,6 @@
 import React from 'react';
 import uuidV4 from 'uuid/v4';
-import Link from 'next/link';
-
-const PostLink = ({ title }) => (
-  <li>
-    <Link as={`/post/${title}`} href={`/post?title=${title}`}>
-        {title}
-    </Link>
-  </li>
-);
+import PostLink from '../../components/PostLink';
 
 class Index extends React.Component {
   static getInitialProps() {
@@ -46,9 +38,9 @@ class Index extends React.Component {
           <p className="t_todo" key={index}>{todo.name}</p>
         ))}
         <ul>
-          <PostLink title="Hello Next.js" name="hello" />
-          <PostLink title="Learn Next.js is awesome" name="learn" />
-          <PostLink title="Deploy Indexs with Zeit" name="deploy" />
+          <li><PostLink title="Hello Next.js" name="hello" /></li>
+          <li><PostLink title="Learn Next.js is awesome" name="learn" /></li>
+          <li><PostLink title="Deploy Indexs with Zeit" name="deploy" /></li>
         </ul>
       </div>
     );

@@ -38,21 +38,18 @@ const ComposedComponent = compose(
                 data: { onCreateTodo },
               },
             },
-          ) => {
-            console.log('onCreateTodo: ', onCreateTodo);
-            return {
-              ...prev,
-              listTodos: {
-                __typename: 'TodoConnection',
-                items: [
-                  onCreateTodo,
-                  ...prev.listTodos.items.filter(
-                    todo => todo.id !== onCreateTodo.id,
-                  ),
-                ],
-              },
-            };
-          },
+          ) => ({
+            ...prev,
+            listTodos: {
+              __typename: 'TodoConnection',
+              items: [
+                onCreateTodo,
+                ...prev.listTodos.items.filter(
+                  todo => todo.id !== onCreateTodo.id,
+                ),
+              ],
+            },
+          }),
         });
       },
     }),
