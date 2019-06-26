@@ -16,28 +16,28 @@ exports[`Home page matches the snapshot" 1`] = `
   </button>
   <ul>
     <li>
-      <a
-        href="/post/Hello Next.js"
+      <span
+        className="sc-bdVaJa gjWVUP"
         onClick={[Function]}
       >
         Hello Next.js
-      </a>
+      </span>
     </li>
     <li>
-      <a
-        href="/post/Learn Next.js is awesome"
+      <span
+        className="sc-bdVaJa gjWVUP"
         onClick={[Function]}
       >
         Learn Next.js is awesome
-      </a>
+      </span>
     </li>
     <li>
-      <a
-        href="/post/Deploy Indexs with Zeit"
+      <span
+        className="sc-bdVaJa gjWVUP"
         onClick={[Function]}
       >
         Deploy Indexs with Zeit
-      </a>
+      </span>
     </li>
   </ul>
 </div>
