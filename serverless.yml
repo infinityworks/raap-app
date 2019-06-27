@@ -1,14 +1,11 @@
 service: next-boilerplate-app
 
-custom:
-  serverless-nextjs:
-    customHandler: ./entry.js
+stage: dev
+region: eu-west-1
 
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: dev
-  region: eu-west-2
   memorySize: 512
   versionFunctions: false
   environment:
@@ -16,6 +13,18 @@ provider:
 
 plugins:
   - serverless-nextjs-plugin
+  - serverless-offline
+
+custom:
+  serverless-nextjs:
+    routes:
+      - src: post
+        path: post/{title}
+        request:
+          parameters:
+            paths:
+              title: ''
+    customHandler: ./entry.js
 
 package:
   exclude:
