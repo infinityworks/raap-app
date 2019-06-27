@@ -2,7 +2,7 @@
   "name": "iw-next-serverless-app",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "keywords": [
     "serverless",
     "nextjs",
@@ -12,7 +12,7 @@
     "test": "npx jest --config test/jest.config.js",
     "clean": "rimraf .next && rimraf .serverless",
     "build": "npm run clean && cross-env NODE_ENV=production next build",
-    "start": "cross-env NODE_ENV=development nodemon --watch src server/index.js server/index.js",
+    "start": "cross-env NODE_ENV=development nodemon --watch",
     "lint": "npx eslint --ext jsx,js src test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
