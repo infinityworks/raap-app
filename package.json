@@ -1,8 +1,13 @@
 {
-  "name": "appsync-next",
-  "version": "1.0.0",
+  "name": "iw-next-serverless-app",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "keywords": [
+    "serverless",
+    "nextjs",
+    "lambda"
+  ],
   "scripts": {
     "test": "npx jest --config test/jest.config.js",
     "clean": "rimraf .next && rimraf .serverless",
@@ -12,26 +17,21 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "package": "serverless package --stage production --region eu-west-1",
-    "deploy": "serverless deploy --package /.serverless"
+    "deploy": "serverless deploy --package /.serverless --stage production --region eu-west-1"
   },
-  "keywords": [
-    "serverless",
-    "nextjs",
-    "lambda"
-  ],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "^8.0.3",
+    "next-aws-lambda": "^2.0.5-alpha.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "serverless-offline": "^5.5.0",
     "aws-appsync": "^1.0.22",
     "aws-appsync-react": "^1.0.13",
     "graphql-tag": "^2.9.2",
-    "next": "^8.1.0",
     "next-apollo": "^1.0.13",
     "next-apollo-appsync": "^0.0.7",
-    "react": "^16.8.6",
     "react-apollo": "^2.1.4",
-    "react-dom": "^16.8.6",
-    "serverless-offline": "^5.5.0",
     "styled-components": "^4.0.0",
     "uuid": "^3.2.1"
   },
@@ -57,7 +57,6 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jest": "^21.24.1",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.7.0",
     "express": "^4.17.1",
     "jest": "^24.8.0",
     "jest-styled-components": "^6.3.3",
@@ -68,7 +67,8 @@
     "react-addons-test-utils": "^15.6.2",
     "react-router-dom": "^5.0.1",
     "react-test-renderer": "^16.8.6",
+    "eslint-plugin-react": "^7.12.4",
     "serverless": "^1.39.1",
-    "serverless-nextjs-plugin": "^2.0.7-alpha.0"
+    "serverless-nextjs-plugin": "^1.8.1"
   }
 }
