@@ -2,6 +2,8 @@ import App, { Container } from 'next/app';
 import React, { Fragment } from 'react';
 import { ThemeProvider } from 'styled-components';
 import ResetStyle from '../components/ResetStyle';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const theme = {
   colors: {
@@ -27,8 +29,9 @@ export default class MyApp extends App {
         <ThemeProvider theme={theme}>
           <Fragment>
             <ResetStyle />
-            <h1>TEST</h1>
+            <Header />
             <Component {...pageProps} />
+            <Footer />
           </Fragment>
         </ThemeProvider>
       </Container>

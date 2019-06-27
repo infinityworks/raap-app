@@ -19,10 +19,5 @@ if (env !== 'production') {
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
     });
-
-    it('should render the correct number of todos', () => {
-      const r = renderer.create(<Index {...defaultProps} />);
-      expect(r.root.findAllByType('p').length).toEqual(1);
-    });
   });
 }

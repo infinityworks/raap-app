@@ -3,7 +3,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledSpan = styled.span`
+const StyledLink = styled.a`
   color: blue;
   cursor: pointer;
   text-decoration: underline;
@@ -11,7 +11,9 @@ const StyledSpan = styled.span`
 
 const PostLink = ({ title }) => (
   <Link as={`/post/${title}`} href={`/post?title=${title}`}>
-    <StyledSpan>{title}</StyledSpan>
+    <StyledLink href={`/post?title=${title}`}>
+      {title}
+    </StyledLink>
   </Link>
 );
 
