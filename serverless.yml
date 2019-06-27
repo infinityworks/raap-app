@@ -24,7 +24,6 @@ custom:
           parameters:
             paths:
               title: ''
-    customHandler: ./entry.js
 
 package:
   exclude:
